@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool isPalindrome(const string s) {
+    string normalizedPhrase;
+   copy_if(s.begin(), s.end(), back_inserter(normalizedPhrase), [](char c) {
+        return isalnum(c);
+    });
+    transform(normalizedPhrase.begin(), normalizedPhrase.end(), normalizedPhrase.begin(), ::tolower);
+    string reversedPhrase(normalizedPhrase.rbegin(), normalizedPhrase.rend());
+    return normalizedPhrase == reversedPhrase;
+}
+
+int main() {
+    string phrase;
+    getline(cin, phrase);
+    if (isPalindrome(phrase)) {
+       cout << "True" << endl;
+    } else {
+        cout << "False" << endl;
+    }
+    return 0;
+}
+
+};
