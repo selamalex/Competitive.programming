@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
+        string newarr[3];
+        string x,y;
+       for(int i=1; i<3; i++){
+        if(heights[i]<heights[i-1]){
+            x=names[i-1];
+            names[i-1]=x;
+        }
+        else{
+         x=names[i];
+         y=names[i-1];
+         names[i-1]=x;
+         names[i]=y;
+        }
+       }
+         
+        vector<string> result;
+        for(int j=0;j<3;j++){
+          result.push_back(names[j]);
+        }
+        return result;
+    }
+
+};
