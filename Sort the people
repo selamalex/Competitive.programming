@@ -3,7 +3,7 @@ public:
     vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
         string newarr[3];
         string x,y;
-       for(int i=1; i<3; i++){
+       for(int i=1; i<heights.size(); i++){
         if(heights[i]<heights[i-1]){
             x=names[i-1];
             names[i-1]=x;
@@ -17,7 +17,7 @@ public:
        }
          
         vector<string> result;
-        for(int j=0;j<3;j++){
+        for(int j=0;j<heights.size();j++){
           result.push_back(names[j]);
         }
         return result;
